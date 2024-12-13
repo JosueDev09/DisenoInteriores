@@ -1,18 +1,48 @@
 ---
-import astroLogo from '../assets/astro.svg';
-import background from '../assets/background.svg';
 import diseno from '../assets/videos/disenointeriores.mp4';
 import img1 from '../assets/img/img1.jpg';
 import img2 from '../assets/img/img2.jpg';
 import img3 from '../assets/img/img3.jpg';
-import next from '../assets/img/next.svg';
-import prev from '../assets/img/prev.svg';
+import logo from '../assets/img/logoCumtual.svg';
+
+
 import '../assets/styles/global.css';
-import { imageConfig } from 'astro:assets';
+
 ---
 
-<!-- Slider -->
 <section class="relative w-full h-screen overflow-hidden" id="slider">
+  <!-- Menú superior -->
+  <div class="fixed top-0 left-0 w-full text-white z-50 ">
+    <div class="max-w-7xl mx-auto px-4 py-3 border-b border-gray-400">
+        <div class="flex items-center justify-between">
+            <!-- Logo o título del sitio -->
+            <img src={logo.src} alt="Icono SVG">      
+            <!-- Menú de navegación -->
+            <nav class="space-x-6 hidden lg:flex">
+                <a href="#proyectos" class="hover:text-gray-400 transition duration-300">PROYECTOS</a>
+                <a href="#contacto" class="hover:text-gray-400 transition duration-300">CONTACTO</a>
+                <a href="#sobre-nosotros" class="hover:text-gray-400 transition duration-300">SOBRE NOSOTROS</a>
+            </nav>
+            
+            <!-- Botón de menú para dispositivos móviles -->
+            <button class="lg:hidden text-xl" id="menu-toggle">☰</button>
+        </div>
+          
+    </div>
+
+      <!-- Menú móvil (oculto por defecto) -->
+      <div id="mobile-menu" class="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-40 hidden">
+        <div class="flex justify-end p-4">
+            <button id="close-menu" class="text-white text-2xl">×</button>
+        </div>
+        <div class="flex flex-col items-center space-y-4 py-6">
+            <a href="#proyectos" class="text-white hover:text-gray-400 transition duration-300">PROYECTOS</a>
+            <a href="#contacto" class="text-white hover:text-gray-400 transition duration-300">CONTACTO</a>
+            <a href="#sobre-nosotros" class="text-white hover:text-gray-400 transition duration-300">SOBRE NOSOTROS</a>
+        </div>
+    </div>
+  </div>
+
   <!-- Las imágenes del slider -->
   <div class="relative w-full h-full aspect-video slider-childs">
     <!-- Video de fondo -->
@@ -22,15 +52,27 @@ import { imageConfig } from 'astro:assets';
         Tu navegador no soporta la reproducción de videos.
       </video>
 
-      <div class="absolute inset-0 flex justify-left items-center text-white text-left p-4 z-20"> <!-- Aseguramos que el texto esté por encima de la capa oscura -->
-        <div>
-          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Bienvenido a mi sitio web</h1>
-          <br>
-          <a class="px-6 py-3 text-white border-2 border-white  hover:bg-gray-400 transition duration-300">PROYECTOS</a>
-          <a class="px-6 py-3 text-white border-2 border-white ml-7  hover:bg-gray-400 transition duration-300">CONTACTANOS</a>
-          <br>
-          <br>
-          <p class="text-lg md:text-xl">Explora el contenido y descubre más sobre nuestros servicios</p>
+      <div class="absolute inset-0 flex justify-center items-center text-white text-left p-4 z-20 ">
+        <div class="text-center sm:text-left">
+          <!-- Título -->
+          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+            Bienvenido a mi sitio web
+          </h1>
+          
+          <!-- Botones de acción -->
+          <div class="flex flex-col sm:flex-row sm:space-x-6 space-y-4 sm:space-y-0 justify-center sm:justify-start">
+            <a class="px-6 py-3 text-white border-2 border-white hover:bg-gray-400 transition duration-300 cursor-pointer">
+              PROYECTOS
+            </a>
+            <a class="px-6 py-3 text-white border-2 border-white hover:bg-gray-400 transition duration-300 cursor-pointer">
+              CONTACTANOS
+            </a>
+          </div>
+          
+          <!-- Descripción -->
+          <p class="text-lg sm:text-xl mt-4">
+            Explora el contenido y descubre más sobre nuestros servicios
+          </p>
         </div>
       </div>
     </figure>
@@ -41,44 +83,104 @@ import { imageConfig } from 'astro:assets';
     <!-- Imagen 2 -->
     <figure class="absolute inset-0 w-full h-full transition-opacity duration-500 opacity-0" data-slide="slide-2">
       <img src={img1.src} alt="Imagen 1" class="w-full h-full block object-cover" />
-      <div class="absolute inset-0 w-[90%] mx-auto h-max text-white mt-auto space-y-4 py-8 hidden md:block mb-40 z-20">
-        <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Imagen 1:</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi corrupti vitae odit, dolorem amet laborum enim minus? Sint, quos reprehenderit.</p>
+      <div class="absolute inset-0 w-[90%] mx-auto h-full flex items-center text-white mt-8 sm:mt-auto space-y-4 py-8 md:space-y-6 md:mb-40 z-20 md:ml-80">
+        <div class="text-center sm:text-left">
+          <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 ">
+            Imagen 1:
+          </h2>
+          <p class="text-lg sm:text-xl mb-4 sm:mb-4">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          </p>       
+            <a class="px-6 py-3 text-white border-2 border-white hover:bg-gray-400 transition duration-300 cursor-pointer">
+              VER PROYECTO
+            </a>
+            <a class="px-6 py-3 text-white border-2 border-white ml-7 hover:bg-gray-400 transition duration-300 cursor-pointer">
+              CONTÁCTANOS
+            </a>
+        
+        </div>
       </div>
+      
     </figure>
 
     <!-- Imagen 3 -->
     <figure class="absolute inset-0 w-full h-full transition-opacity duration-500 opacity-0" data-slide="slide-3">
       <img src={img2.src} alt="Imagen 2" class="w-full h-full block object-cover" />
-      <div class="absolute inset-0 w-[90%] mx-auto h-max text-white mt-auto space-y-4 py-8 hidden md:block mb-40 z-20">
-        <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Imagen 2:</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi corrupti vitae odit, dolorem amet laborum enim minus? Sint, quos reprehenderit.</p>
+      <div class="absolute inset-0 w-[90%] mx-auto h-full flex items-center text-white mt-8 sm:mt-auto space-y-4 py-8 md:space-y-6 md:mb-40 z-20 md:ml-80">
+          <div class="text-center sm:text-left">
+              <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Imagen 2:</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+              <a class="px-6 py-3 text-white border-2 border-white hover:bg-gray-400 transition duration-300 relative top-10 cursor-pointer">VER PROYECTO</a>
+              <a class="px-6 py-3 text-white border-2 border-white ml-7 hover:bg-gray-400 transition duration-300 relative top-10 cursor-pointer">CONTÁCTANOS</a>
+          </div>
       </div>
     </figure>
 
     <!-- Imagen 4 -->
     <figure class="absolute inset-0 w-full h-full transition-opacity duration-500 opacity-0" data-slide="slide-4">
       <img src={img3.src} alt="Imagen 3" class="w-full h-full block object-cover" />
-      <div class="absolute inset-0 w-[90%] mx-auto h-max text-white mt-auto space-y-4 py-8 hidden md:block mb-40 z-20">
-        <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Imagen 3:</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi corrupti vitae odit, dolorem amet laborum enim minus? Sint, quos reprehenderit.</p>
+      <div class="absolute inset-0 w-[90%] mx-auto h-full flex items-center text-white mt-8 sm:mt-auto space-y-4 py-8 md:space-y-6 md:mb-40 z-20 md:ml-80">
+          <div class="text-center sm:text-left">
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Imagen 3:</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <a class="px-6 py-3 text-white border-2 border-white hover:bg-gray-400 transition duration-300 relative top-10 cursor-pointer">VER PROYECTO</a>
+            <a class="px-6 py-3 text-white border-2 border-white ml-7 hover:bg-gray-400 transition duration-300 relative top-10 cursor-pointer">CONTÁCTANOS</a>
+          </div>
       </div>
     </figure>
   </div>
 
   <!-- Botones de navegación -->
-  <div class="relative ml-96">
-    <button class="slider-prev z-50 ml-4 relative bottom-10 left-96 transform -translate-y-1/2" data-button="prev">
-      <img src={prev.src} class="w-8 aspect-square md:w-12" alt="Prev" />
+  <div class="relative z-50">
+    <!-- Botón "Prev" -->
+    <button class="slider-prev absolute bottom-10 right-20 transform -translate-y-1/2 cursor-pointer" data-button="prev">
+        <svg class="rotate-180 w-28" width="60" height="15" viewBox="0 0 60 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1.8125 7.96895H56.1875H58V6.66895H56.1875H1.8125H0V7.96895H1.8125Z" fill="white"/>
+            <path d="M58.5 7.5L52.5 13.5" stroke="white" stroke-linecap="square"/>
+            <path d="M52.5 1.5L58.5 7.5" stroke="white" stroke-linecap="square"/>
+        </svg>
     </button>
 
-    <button class="slider-next z-50 mr-4 relative bottom-10 -right-96 transform -translate-y-1/2" data-button="next">
-      <img src={next.src} class="w-8 aspect-square md:w-12" alt="Next" />
+    <!-- Botón "Next" -->
+    <button class="slider-next absolute bottom-10 right-4 transform -translate-y-1/2 cursor-pointer" data-button="next">
+        <svg width="60" height="15" viewBox="0 0 60 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1.8125 7.96895H56.1875H58V6.66895H56.1875H1.8125H0V7.96895H1.8125Z" fill="white"/>
+            <path d="M58.5 7.5L52.5 13.5" stroke="white" stroke-linecap="square"/>
+            <path d="M52.5 1.5L58.5 7.5" stroke="white" stroke-linecap="square"/>
+        </svg>
     </button>
   </div>
+
+  
+
+  
 </section>
 
+
+
+
+
 <script>
+    // Obtener los elementos
+    document.addEventListener('DOMContentLoaded', () => {
+        // Obtener los elementos
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenu = document.getElementById('close-menu');
+
+        // Verifica si el elemento existe antes de agregar el evento
+        if (menuToggle && mobileMenu && closeMenu) {
+            // Mostrar el menú móvil cuando se hace clic en el botón
+            menuToggle.addEventListener('click', () => {
+                mobileMenu.classList.remove('hidden'); // Muestra el menú
+            });
+
+            // Cerrar el menú móvil cuando se hace clic en el botón de cerrar
+            closeMenu.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden'); // Oculta el menú
+            });
+        }
+    });
   document.addEventListener("DOMContentLoaded", () => {
     const slides = document.querySelectorAll("[data-slide]");
     let currentIndex = 0;
