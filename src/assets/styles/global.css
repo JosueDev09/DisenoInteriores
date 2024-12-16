@@ -17,6 +17,23 @@
     }
   }
 
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 4s ease-out forwards;
+  }
+
+  
+
+  
+
 
 /* body{
     @apply grid place-content-center p-20;
