@@ -8,6 +8,7 @@ export default {
       colors: {
         'gradient-start': '#01EB6A',
         'gradient-end': '#0085EC',
+        'body': ['"Open Sans"'],
       },
     },
   },
