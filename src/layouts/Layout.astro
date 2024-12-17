@@ -1,5 +1,6 @@
 ---
 const {pageTitle} = Astro.props;
+import { ClientRouter } from 'astro:transitions';
 
 ---
 <!doctype html>
@@ -9,7 +10,9 @@ const {pageTitle} = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
+			
 		<title>Diseño Interiores - {pageTitle}</title>
+		<ClientRouter />
 	</head>
 	<body>	
 		<slot/>
