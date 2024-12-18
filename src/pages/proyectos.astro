@@ -8,6 +8,9 @@ import galeria3 from '../assets/img/galeria3.jpg';
 import slider1 from '../assets/img/slider1.jpg';
 import slider2 from '../assets/img/slider2.jpg';
 import slider3 from '../assets/img/slider3.jpg';
+import { getCollection  } from 'astro:content';
+const proyectos = await getCollection('proyectos');
+console.log(proyectos)
 const pageTitle ="Proyectos"
 ---
 
@@ -49,144 +52,35 @@ const pageTitle ="Proyectos"
           <div class="relative mt-48 text-center font-extrabold">
             <h1 class="font-serif">PROYECTOS</h1>
             <div class="p-5 md:p-10">
-                <div class="colums-1 gap-5 lg:gap-8 sm:columns-2 lg:columns-3 xl:columns-4 [&>img:not(:first-child)]:mt-5 lg:[&img:not(:first-child)]:mt-8">
-                    <div class="group relative rounded-[12px] overflow-hidden transition-all duration-300 transform hover:scale-95 hover:shadow-lg">
-                        <img class="w-full h-full object-cover transition-all duration-300" src={galeria1.src} alt="Imagen">
-                        <!-- Capa negra sobre la imagen, inicialmente oculta -->
-                        <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
-                        <!-- Línea en el centro cuando se hace hover -->
-                        <div class="absolute top-64 left-16 justify-center right-0 w-72 h-[1px] bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform -translate-y-1/2"></div>
-                        <!-- Texto "Ver más" en la parte inferior derecha, encima de la línea -->
-                        <span class="absolute bottom-12 right-20 mb-2 mr-2 text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 cursor-pointer">
-                            Ver más
-                        </span>
-                    </div>
-                    <div class="group relative rounded-[12px] overflow-hidden transition-all duration-300 transform hover:scale-95 hover:shadow-lg">
-                        <img class="w-full h-full object-cover transition-all duration-300 "src={galeria2.src} alt="Imagen">
-                        <!-- Capa negra sobre la imagen, inicialmente oculta -->
-                        <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-40 transition-opacity duration-300"></div>
-                        <!-- Texto "Ver más", inicialmente oculto -->
-                        <div class="absolute top-64 left-16 justify-center right-0 w-72 h-[1px]  bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform -translate-y-1/2"></div>
-                        <!-- Texto "Ver más" en la parte inferior derecha, encima de la línea -->
-                        <span class="absolute bottom-12 right-20 mb-2 mr-2 text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 cursor-pointer">
-                            Ver más
-                        </span>
-                    </div>
-                    <div class="group relative rounded-[12px] overflow-hidden transition-all duration-300 transform hover:scale-95 hover:shadow-lg">
-                        <img class="w-full h-full object-cover transition-all duration-300 " src={galeria3.src} alt="Imagen">
-                        <!-- Capa negra sobre la imagen, inicialmente oculta -->
-                        <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-40 transition-opacity duration-300"></div>
-                        <!-- Texto "Ver más", inicialmente oculto -->
-                        <div class="absolute top-20 left-16 justify-center right-0 w-72 h-[1px] bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform -translate-y-1/2"></div>
-                        <!-- Texto "Ver más" en la parte inferior derecha, encima de la línea -->
-                        <span class="absolute top-10 right-20 mb-2 mr-2 text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 cursor-pointer">
-                            Ver más
-                        </span>
-                    </div>
-            
-                    <div class="group relative rounded-[12px] overflow-hidden transition-all duration-300 transform hover:scale-95 hover:shadow-lg">
-                        <img class="w-full h-full object-cover transition-all duration-300 " src={galeria1.src} alt="Imagen">
-                        <!-- Capa negra sobre la imagen, inicialmente oculta -->
-                        <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-40 transition-opacity duration-300"></div>
-                        <!-- Texto "Ver más", inicialmente oculto -->
-                        <div class="absolute top-64 left-16 justify-center right-0 w-72 h-[1px] bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform -translate-y-1/2"></div>
-                        <!-- Texto "Ver más" en la parte inferior derecha, encima de la línea -->
-                        <span class="absolute bottom-12 right-20 mb-2 mr-2 text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 cursor-pointer">
-                            Ver más
-                        </span>
-                    </div>
-                    <div class="group relative rounded-[12px] overflow-hidden transition-all duration-300 transform hover:scale-95 hover:shadow-lg">
-                        <img class="w-full h-full object-cover transition-all duration-300 " src={galeria2.src} alt="Imagen">
-                        <!-- Capa negra sobre la imagen, inicialmente oculta -->
-                        <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-40 transition-opacity duration-300"></div>
-                        <!-- Texto "Ver más", inicialmente oculto -->
-                        <div class="absolute top-64 left-16 justify-center right-0 w-72 h-[1px] bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform -translate-y-1/2"></div>
-                        <!-- Texto "Ver más" en la parte inferior derecha, encima de la línea -->
-                        <span class="absolute bottom-12 right-20 mb-2 mr-2 text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 cursor-pointer">
-                            Ver más
-                        </span>
-                    </div>
-                    <div class="group relative rounded-[12px] overflow-hidden transition-all duration-300 transform hover:scale-95 hover:shadow-lg">
-                        <img class="w-full h-full object-cover transition-all duration-300 " src={galeria1.src} alt="Imagen">
-                        <!-- Capa negra sobre la imagen, inicialmente oculta -->
-                        <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-40 transition-opacity duration-300"></div>
-                        <!-- Texto "Ver más", inicialmente oculto -->
-                        <div class="absolute top-64 left-16 justify-center right-0 w-72 h-[1px] bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform -translate-y-1/2"></div>
-                        <!-- Texto "Ver más" en la parte inferior derecha, encima de la línea -->
-                        <span class="absolute bottom-12 right-20 mb-2 mr-2 text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 cursor-pointer">
-                            Ver más
-                        </span>
-                    </div>
-                    <div class="group relative rounded-[12px] overflow-hidden transition-all duration-300 transform hover:scale-95 hover:shadow-lg">
-                        <img class="w-full h-full object-cover transition-all duration-300 " src={galeria2.src} alt="Imagen">
-                        <!-- Capa negra sobre la imagen, inicialmente oculta -->
-                        <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-40 transition-opacity duration-300"></div>
-                        <!-- Texto "Ver más", inicialmente oculto -->
-                        <div class="absolute top-64 left-16 justify-center right-0 w-72 h-[1px] bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform -translate-y-1/2"></div>
-                        <!-- Texto "Ver más" en la parte inferior derecha, encima de la línea -->
-                        <span class="absolute bottom-12 right-20 mb-2 mr-2 text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 cursor-pointer">
-                            Ver más
-                        </span>
-                    </div>
-                    <div class="group relative rounded-[12px] overflow-hidden transition-all duration-300 transform hover:scale-95 hover:shadow-lg">
-                        <img class="w-full h-full object-cover transition-all duration-300 " src={galeria2.src} alt="Imagen">
-                        <!-- Capa negra sobre la imagen, inicialmente oculta -->
-                        <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-40 transition-opacity duration-300"></div>
-                        <!-- Texto "Ver más", inicialmente oculto -->
-                        <div class="absolute top-64 left-16 justify-center right-0 w-72 h-[1px] bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform -translate-y-1/2"></div>
-                        <!-- Texto "Ver más" en la parte inferior derecha, encima de la línea -->
-                        <span class="absolute bottom-12 right-20 mb-2 mr-2 text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 cursor-pointer">
-                            Ver más
-                        </span>
-                    </div>
-                    <div class="absolute top-72 left-16 justify-center right-0 w-72 h-[1px] bg-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform -translate-y-5"></div>
-                    <div class="group relative rounded-[12px] overflow-hidden transition-all duration-300 transform hover:scale-95 hover:shadow-lg">
-                        <img class="w-full h-full object-cover transition-all duration-300 " src={galeria1.src} alt="Imagen">
-                        <!-- Capa negra sobre la imagen, inicialmente oculta -->
-                        <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-40 transition-opacity duration-300"></div>
-                        <!-- Texto "Ver más", inicialmente oculto -->
-                        <div class="absolute top-64 left-16 justify-center right-0 w-72 h-[1px] bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform -translate-y-1/2"></div>
-                        <!-- Texto "Ver más" en la parte inferior derecha, encima de la línea -->
-                        <span class="absolute bottom-12 right-20 mb-2 mr-2 text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 cursor-pointer">
-                            Ver más
-                        </span>
-                    </div>
+                <div class="colums-1 gap-5 lg:gap-8 sm:columns-2 lg:columns-3 xl:columns-3 [&>img:not(:first-child)]:mt-5 lg:[&img:not(:first-child)]:mt-8">
+                    {
+                      proyectos.map(proyecto => {
+                        const { data} = proyecto
+                        const{ title, company, img, description, slug} = data
 
-                    <div class="group relative rounded-[12px] overflow-hidden transition-all duration-300 transform hover:scale-95 hover:shadow-lg">
-                        <img class="w-full h-full object-cover transition-all duration-300" src={galeria1.src} alt="Imagen">
-                        <!-- Capa negra sobre la imagen, inicialmente oculta -->
-                        <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-40 transition-opacity duration-300"></div>
-                        <!-- Texto "Ver más", inicialmente oculto -->
-                        <div class="absolute top-64 left-16 justify-center right-0 w-72 h-[1px] bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform -translate-y-1/2"></div>
-                        <!-- Texto "Ver más" en la parte inferior derecha, encima de la línea -->
-                        <span class="absolute bottom-12 right-20 mb-2 mr-2 text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 cursor-pointer">
-                            Ver más
-                        </span>
-                    </div>
-                    <div class="group relative rounded-[12px] overflow-hidden transition-all duration-300 transform hover:scale-95 hover:shadow-lg">
-                        <img class="w-full h-full object-cover transition-all duration-300 " src={galeria1.src} alt="Imagen">
-                        <!-- Capa negra sobre la imagen, inicialmente oculta -->
-                        <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-40 transition-opacity duration-300"></div>
-                        <!-- Texto "Ver más", inicialmente oculto -->
-                        <div class="absolute top-64 left-16 justify-center right-0 w-72 h-[1px] bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform -translate-y-1/2"></div>
-                        <!-- Texto "Ver más" en la parte inferior derecha, encima de la línea -->
-                        <span class="absolute bottom-12 right-20 mb-2 mr-2 text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 cursor-pointer">
-                            Ver más
-                        </span>
-                    </div>
-                    <div class="group relative rounded-[12px] overflow-hidden transition-all duration-300 transform hover:scale-95 hover:shadow-lg">
-                        <img class="w-full h-full object-cover transition-all duration-300 " src={galeria1.src} alt="Imagen">
-                        <!-- Capa negra sobre la imagen, inicialmente oculta -->
-                        <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-40 transition-opacity duration-300"></div>
-                        <!-- Texto "Ver más", inicialmente oculto -->
-                        <div class="absolute top-64 left-16 justify-center right-0 w-72 h-[1px] bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform -translate-y-1/2"></div>
-                        <!-- Texto "Ver más" en la parte inferior derecha, encima de la línea -->
-                        <span class="absolute bottom-12 right-20 mb-2 mr-2 text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 cursor-pointer">
-                            Ver más
-                        </span>
-                    </div>
-                    
-                    <!-- Repite el patrón para las demás imágenes -->
+                        return(
+                            <div key={slug} class="group relative rounded-[12px] overflow-hidden transition-all duration-300 transform hover:scale-95 hover:shadow-lg">
+                                  
+                                  <a href={`/proyectos/${slug}`}>
+                                    <img class="w-full h-full object-cover transition-all duration-300" src={`/${img}`} alt={title}>
+                                  </a>
+                                  
+                                  <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
+                                
+                                  <div class="absolute top-[320px] left-[150px] justify-center right-0 w-72 h-[1px] bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform -translate-y-1/2"></div>
+                                  
+                                  <span class="absolute bottom-12 right-[400px] mb-2 mr-2 text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 cursor-pointer">
+                                      {title}
+                                  </span>
+                                  <span class="absolute bottom-12 right-20 mb-2 mr-2 text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 cursor-pointer">
+                                      Ver más
+                                  </span>
+                                </div>     
+                        )
+                      })
+                    }                                                       
+
+                  
                 </div>
             </div>              
           </div>         
@@ -234,22 +128,8 @@ const pageTitle ="Proyectos"
               <p>php Developer</p>
             </div>
           </div>
-          <div class="slider-img">
-            <img src={slider2.src} alt="6" />
-            <h1 class="sliderH1">PROYECTO2</h1>
-            <div class="details">
-              <h2>PROYECTO 2</h2>
-              <p>seo Developer</p>
-            </div>
-          </div>
-          <div class="slider-img">
-            <img src={slider3.src} alt="7" />
-            <h1 class="sliderH1">PROYECTO3</h1>
-            <div class="details">
-              <h2>PROYECTO 3</h2>
-              <p>sql Developer</p>
-            </div>
-          </div>
+         
+         
         </div>
       </section>
 
