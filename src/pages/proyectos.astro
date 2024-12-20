@@ -10,7 +10,7 @@ import slider2 from '../assets/img/slider2.jpg';
 import slider3 from '../assets/img/slider3.jpg';
 import { getCollection  } from 'astro:content';
 const proyectos = await getCollection('proyectos');
-console.log(proyectos)
+//console.log(proyectos)
 const pageTitle ="Proyectos"
 ---
 
@@ -30,7 +30,7 @@ const pageTitle ="Proyectos"
             </nav>
             
             <!-- Botón de menú para dispositivos móviles -->
-            <button class="lg:hidden text-xl" id="menu-toggle">☰</button>
+            <button class="lg:hidden text-5xl" id="menu-toggle">☰</button>
           </div>
             
         </div>
@@ -40,53 +40,51 @@ const pageTitle ="Proyectos"
           <div class="flex justify-end p-4">
             <button id="close-menu" class="text-white text-2xl">×</button>
           </div>
-          <div class="flex flex-col items-center space-y-4 py-6">
-            <a href="/proyectos" class="text-white hover:text-gray-400 transition duration-300">PROYECTOS</a>
-            <a href="#contacto" class="text-white hover:text-gray-400 transition duration-300">CONTACTO</a>
-            <a href="#sobre-nosotros" class="text-white hover:text-gray-400 transition duration-300">SOBRE NOSOTROS</a>
+          <div class="text-4xl p-2 flex flex-col items-center space-y-4 py-6">
+            <a href="/proyectos" class="p-3 text-white hover:text-gray-400 transition duration-300">PROYECTOS</a>
+            <a href="#contacto" class="p-3 text-white hover:text-gray-400 transition duration-300">CONTACTO</a>
+            <a href="#sobre-nosotros" class=" p-3 text-white hover:text-gray-400 transition duration-300">SOBRE NOSOTROS</a>
           </div>
         </div>
         </div>
        
 
-          <div class="relative mt-48 text-center font-extrabold">
-            <h1 class="font-serif">PROYECTOS</h1>
-            <div class="p-5 md:p-10">
-                <div class="colums-1 gap-5 lg:gap-8 sm:columns-2 lg:columns-3 xl:columns-3 [&>img:not(:first-child)]:mt-5 lg:[&img:not(:first-child)]:mt-8">
-                    {
-                      proyectos.map(proyecto => {
-                        const { data} = proyecto
-                        const{ title, company, img, description, slug} = data
-
-                        return(
-                            <div key={slug} class="group relative rounded-[12px] overflow-hidden transition-all duration-300 transform hover:scale-95 hover:shadow-lg">
-                                  
-                                  <a href={`/proyectos/${slug}`}>
-                                    <img class="w-full h-full object-cover transition-all duration-300" src={`/${img}`} alt={title}>
-                                  </a>
-                                  
-                                  <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
-                                
-                                  <div class="absolute top-[320px] left-[150px] justify-center right-0 w-72 h-[1px] bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform -translate-y-1/2"></div>
-                                  
-                                  <span class="absolute bottom-12 right-[400px] mb-2 mr-2 text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 cursor-pointer">
-                                      {title}
-                                  </span>
-                                  <span class="absolute bottom-12 right-20 mb-2 mr-2 text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 cursor-pointer">
+          <div class="relative mt-48  lg:text-center font-extrabold">
+            <h1 class="text-center font-serif">PROYECTOS</h1>
+            <div >
+              <div class="ml-[-80px] mt-[100px] md:ml-[110px] lg:ml-[290px] flex flex-wrap ">
+                  {proyectos.map(proyecto => {
+                      const { data } = proyecto;
+                      const { title, company, img, description, slug } = data;
+          
+                      return (
+                          <div key={slug} class="pb-5 h-[300px] ml-[85px] group relative rounded-[12px] overflow-hidden transition-all duration-300 transform hover:scale-95 hover:shadow-lg lg:ml-[10px] ">
+                              <a href={`/proyecto/${slug}`}>
+                                  <img class=" lg:w-full h-full object-cover transition-all duration-300" src={`/${img}`} alt={title} />
+                              </a>
+          
+                              <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
+          
+                              <div class="absolute top-[250px] left-[10px] justify-center right-0 w-[400px] h-[1px] bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform -translate-y-1/2"></div>
+          
+                              <span class="absolute bottom-20 right-[280px] mb-2 mr-2 text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 cursor-pointer">
+                                  {title}
+                              </span>
+          
+                              <a href={`/proyecto/${slug}`}>
+                                  <span class="absolute bottom-20 right-5 mb-2 mr-2 text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 cursor-pointer">
                                       Ver más
                                   </span>
-                                </div>     
-                        )
-                      })
-                    }                                                       
-
-                  
-                </div>
-            </div>              
+                              </a>
+                          </div>
+                      );
+                  })}
+              </div>
+          </div>        
           </div>         
     </section>
 
-    <section class="slider-container">
+    <!-- <section class="slider-container">
         <div class="slider-images">
           <div class="slider-img">
             <img src={slider3.src} alt="1" />
@@ -131,7 +129,7 @@ const pageTitle ="Proyectos"
          
          
         </div>
-      </section>
+      </section> -->
 
    
 

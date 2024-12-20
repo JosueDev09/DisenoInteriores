@@ -1,7 +1,7 @@
 ---
-slug: Proyecto 2
+slug: Proyecto2
 title: Proyecto 2
 company: CUMTUAL
-img: galeria1.jpg
+img: galeria2.jpg
 description: Segundo Proyecto
 ---

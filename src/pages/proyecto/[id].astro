@@ -1,11 +1,9 @@
 ---
 import type { GetStaticPaths } from "astro";
 import { getCollection } from "astro:content";
-import '../assets/styles/global.css';
-import logo from '../assets/img/logoCumtual.svg';
-import Layout from "../layouts/Layout.astro";
-import { param } from "jquery";
-import { render } from "astro:content";
+import '../../assets/styles/global.css';
+import logo from '../../assets/img/logoCumtual.svg';
+import Layout from "../../layouts/Layout.astro";
 
 export async function getStaticPaths(){
     const proyectos = await getCollection("proyectos");
@@ -16,12 +14,14 @@ export async function getStaticPaths(){
     }))
 }
 
-const { proyecto } = Astro.props
-const { data } = proyecto
-const { title, company, img, description } = data
-const { Content } = await render(proyecto)
+const { proyecto } = Astro.props;
+const { data } = proyecto;
+const { title, company, img, description } = data;
+// const { Content } = await render(proyecto);
+const pageTitle = title;
 ---
 
+<Layout pageTitle={pageTitle} >
 <section class="relative w-full overflow-hidden">
 
     <div class=" bg-white fixed top-0 left-0 w-full text-black z-50 ">
@@ -57,13 +57,14 @@ const { Content } = await render(proyecto)
      
 
         <div class="relative mt-48 text-center font-extrabold">
-          <h1 class="font-serif">PROYECTOS</h1>
+          <h1 class="font-serif">{title}</h1>
           <div class="p-5 md:p-10">
               <div class="colums-1 gap-5 lg:gap-8 sm:columns-2 lg:columns-3 xl:columns-3 [&>img:not(:first-child)]:mt-5 lg:[&img:not(:first-child)]:mt-8">
                  
           </div>              
         </div>         
   </section>
+</Layout>
 
 
 
