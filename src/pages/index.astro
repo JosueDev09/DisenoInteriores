@@ -1,8 +1,8 @@
 ---
 import diseno from '../assets/videos/disenointeriores.mp4';
-import img1 from '../assets/img/img1.jpg';
-import img2 from '../assets/img/img2.jpg';
-import img3 from '../assets/img/img3.jpg';
+import img1 from '../../public/ImagenesConvertidas/img1.webp';
+import img2 from '../../public/ImagenesConvertidas/img2.webp';
+import img3 from '../../public/ImagenesConvertidas/img3.webp';
 import logo from '../assets/img/logoCumtual.svg';
 import '../assets/styles/global.css';
 import Layout from '../layouts/Layout.astro';
@@ -84,7 +84,7 @@ const pageTitle = "Inicio";
 		<div class="absolute inset-0 bg-black opacity-50 z-10"></div> <!-- Capa oscura con z-10 -->
 	
 		<!-- Imagen 2 -->
-		<figure class="absolute inset-0 w-full h-full transition-opacity duration-500 opacity-0" data-slide="slide-2">
+		<figure class="absolute inset-0 w-full h-full transition-opacity duration-100 opacity-0" data-slide="slide-2">
 		  <img src={img1.src} alt="Imagen 1" class="w-full h-full block object-cover" />
 		  <div class="absolute inset-0 w-[90%] mx-auto h-full flex items-center text-white mt-8 sm:mt-auto space-y-4 py-8 md:space-y-6 md:mb-40 z-20 md:ml-80 animate-fade-in ">
 			<div class="text-center sm:text-left">
@@ -109,7 +109,7 @@ const pageTitle = "Inicio";
 		</figure>
 	
 		<!-- Imagen 3 -->
-		<figure class="absolute inset-0 w-full h-full transition-opacity duration-500 opacity-0" data-slide="slide-3">
+		<figure class="absolute inset-0 w-full h-full transition-opacity duration-100 opacity-0" data-slide="slide-3">
 		  <img src={img2.src} alt="Imagen 2" class="w-full h-full block object-cover" />
 		  <div class="absolute inset-0 w-[90%] mx-auto h-full flex items-center text-white mt-8 sm:mt-auto space-y-4 py-8 md:space-y-6 md:mb-40 z-20 md:ml-80">
 			  <div class="text-center sm:text-left">
@@ -128,7 +128,7 @@ const pageTitle = "Inicio";
 		</figure>
 	
 		<!-- Imagen 4 -->
-		<figure class="absolute inset-0 w-full h-full transition-opacity duration-500 opacity-0" data-slide="slide-4">
+		<figure class="absolute inset-0 w-full h-full transition-opacity duration-100 opacity-0" data-slide="slide-4">
 		  <img src={img3.src} alt="Imagen 3" class="w-full h-full block object-cover" />
 		  <div class="absolute inset-0 w-[90%] mx-auto h-full flex items-center text-white mt-8 sm:mt-auto space-y-4 py-8 md:space-y-6 md:mb-40 z-20 md:ml-80">
 			  <div class="text-center sm:text-left">
@@ -167,11 +167,13 @@ const pageTitle = "Inicio";
 			</svg>
 		</button>
 	  </div>
+	  
 	
 	  
 	
 	  
 	</section>
+
 	
 	
 	
