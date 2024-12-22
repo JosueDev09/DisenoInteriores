@@ -1,6 +1,8 @@
 ---
 const {pageTitle} = Astro.props;
 import { ClientRouter } from 'astro:transitions';
+import Header from "@components/Header.astro";
+
 
 
 
@@ -16,8 +18,8 @@ import { ClientRouter } from 'astro:transitions';
 		<title>Diseño Interiores - {pageTitle}</title>
 		<ClientRouter />
 	</head>
-	<body>	
-		
+	<body class="bg-[#FFF]/80 overflow-x-hidden">
+		<Header />
 		<slot/>
 	</body>
 </html>
