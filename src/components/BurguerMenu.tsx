@@ -13,9 +13,9 @@ export const BurguerMenu = () => {
       className=" group cursor-pointer"
       onClick={() => isMenuOpen.set(!$isMenuOpen)}
     >
-      <span className=" block w-[35px] h-[3px] mb-[5px] bg-[#000]/70 group-hover:bg-green-cumtual ease-in-out delay-100 transition-colors duration-200"></span>
-      <span className="block w-[35px] h-[3px] mb-[5px] bg-[#000]/70 group-hover:bg-green-cumtual ease-in-out delay-100 transition-colors duration-200"></span>
-      <span className="block w-[35px] h-[3px] mb-[5px] bg-[#000]/70 group-hover:bg-green-cumtual ease-in-out delay-100 transition-colors duration-200"></span>
+      <span className=" block w-[35px] h-[3px] mb-[5px] bg-[#000]/50 group-hover:bg-green-cumtual ease-in-out delay-100 transition-colors duration-200"></span>
+      <span className="block w-[35px] h-[3px] mb-[5px] bg-[#000]/50 group-hover:bg-green-cumtual ease-in-out delay-100 transition-colors duration-200"></span>
+      <span className="block w-[35px] h-[3px] mb-[5px] bg-[#000]/50 group-hover:bg-green-cumtual ease-in-out delay-100 transition-colors duration-200"></span>
     </div>
   );
 };
