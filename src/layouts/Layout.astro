@@ -2,7 +2,9 @@
 const {pageTitle} = Astro.props;
 import { ClientRouter } from 'astro:transitions';
 import Header from "@components/Header.astro";
-
+import Footer from '@components/footer.astro';
+const url = new URL(Astro.url); // Obtén la URL de la página actual
+const pathname = url.pathname;
 
 
 
@@ -21,6 +23,7 @@ import Header from "@components/Header.astro";
 	<body class="bg-transparent overflow-x-hidden">
 		<Header />
 		<slot/>
+		{pathname !== '/' && <Footer />}
 	</body>
 </html>
 

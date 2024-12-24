@@ -4,25 +4,24 @@ import { Slider } from "./Slider";
 import CumtualSVG from "./CumtualSVG.astro";
 ---
 
-<div class=" p-[30px] bg-transparent fixed top-0 left-0 w-full text-black z-50 transition-all duration-100 cursor-pointer" id="menu">
+<div class=" p-[30px] bg-transparent fixed top-0 left-0 w-full text-black z-50 transition-all duration-100 cursor-pointer" id="navbar">
     <div class="max-w-7xl mx-auto px-4 py-3 border-b border-gray-400">
-    <div class="flex justify-between items-center text-bg-gray-cumtual">
+    <div class="flex justify-between items-center lg:text-bg-gray-cumtual text-xl" id="menu">
         <a href="/">
           <div class="flex items-center">
             <CumtualSVG />
-            <p class="text-gradient text-xl font-bold">Raices</p>
+            <p class="text-gradient text-xl font-bold">Interiores</p>
           </div>
         </a>
         <div>
-          <nav class="block md:hidden">
+          <nav class="block md:hidden" id="mobile">
             <BurguerMenu client:load />
             <Slider client:load />
           </nav>
           <nav class="hidden md:flex gap-5">
+            <a href="/proyectos" class="hover:text-[#000] hover:font-bold ease-in-out duration-200 delay-100">Proyectos</a>
             <a href="#" class="hover:text-[#000] hover:font-bold ease-in-out duration-200 delay-100">Nosotros</a>
-            <a href="#" class="hover:text-[#000] hover:font-bold ease-in-out duration-200 delay-100">Anuncios</a>
-            <a href="#" class="hover:text-[#000] hover:font-bold ease-in-out duration-200 delay-100">Blog</a>
-            <a href="#" class="hover:text-[#000] hover:font-bold ease-in-out duration-200 delay-100">Contacto</a>
+            <a href="#" class="hover:text-[#000] hover:font-bold ease-in-out duration-200 delay-100">Contactanos</a>
           </nav>
         </div>
       </div>
@@ -32,13 +31,23 @@ import CumtualSVG from "./CumtualSVG.astro";
 
 <script>
   window.addEventListener("scroll", function () {
-    const header = document.getElementById("menu");
+    const navbar = document.getElementById("navbar");
+    const menu = document.getElementById("menu");
+    const mobile = document.getElementById("mobile");
     if (window.scrollY > 0) {
-    //   header?.classList.add("bg-[#FFF]", "shadow-lg", "transition-all", "duration-500", "ease-out");
-      header?.classList.remove("bg-transparent");
-    } else {
-       header?.classList.remove("bg-[#FFF]", "shadow-lg");
-    //   header?.classList.add("bg-transparent");
-    }
+          // Cuando hace scroll, cambia el fondo a negro
+          navbar?.classList.remove('bg-transparent');
+          navbar?.classList.add('lg:bg-[#191A1E]');
+          menu?.classList.add('lg:text-[#FFFF]');
+          mobile?.classList.add('text-bg-gray-cumtual');
+            
+        } else {
+          // Si no hace scroll (está en la parte superior), el fondo es transparente
+          navbar?.classList.remove('lg:bg-[#191A1E]');  
+          menu?.classList.remove('lg:text-[#FFFF]');
+          navbar?.classList.add('lg:bg-transparent');
+          menu?.classList.add('lg:text-bg-gray-cumtual');
+          
+        }
   });
 </script>

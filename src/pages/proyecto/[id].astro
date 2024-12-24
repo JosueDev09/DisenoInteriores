@@ -23,42 +23,7 @@ const pageTitle = title;
 ---
 
 <Layout pageTitle={pageTitle} >
-<section class="relative w-full overflow-hidden">
-
-    <div class=" bg-white fixed top-0 left-0 w-full text-black z-50 ">
-      <div class=" max-w-7xl mx-auto px-4 py-3 border-b border-gray-400">
-        <div class="flex items-center justify-between">
-          <!-- Logo o título del sitio -->
-         <a href="/"><img src={logo.src} alt="Icono SVG"></a>    
-        
-          <!-- Menú de navegación -->
-          <nav class="space-x-6 hidden lg:flex">
-            <a href="/proyectos" class="hover:text-gray-400 transition duration-300">PROYECTOS</a>
-            <a href="#contacto" class="hover:text-gray-400 transition duration-300">CONTACTO</a>
-            <a href="#sobre-nosotros" class="hover:text-gray-400 transition duration-300">SOBRE NOSOTROS</a>
-          </nav>
-          
-          <!-- Botón de menú para dispositivos móviles -->
-          <button class="lg:hidden text-xl" id="menu-toggle">☰</button>
-        </div>
-          
-      </div>
-      
-    
-        <!-- Menú móvil (oculto por defecto) -->
-        <div id="mobile-menu" class="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-40 hidden">
-        <div class="flex justify-end p-4">
-          <button id="close-menu" class="text-white text-2xl">×</button>
-        </div>
-        <div class="flex flex-col items-center space-y-4 py-6">
-          <a href="/proyectos" class="text-white hover:text-gray-400 transition duration-300">PROYECTOS</a>
-          <a href="#contacto" class="text-white hover:text-gray-400 transition duration-300">CONTACTO</a>
-          <a href="#sobre-nosotros" class="text-white hover:text-gray-400 transition duration-300">SOBRE NOSOTROS</a>
-        </div>
-      </div>
-
-           
-      </div>
+<section class="relative w-full overflow-hidden">     
      
     
         <div class="relative mt-48 text-center font-extrabold">
@@ -88,7 +53,7 @@ const pageTitle = title;
   </section>
   <section class="relative w-full overflow-hidden mt-[50px]">
     <div class=" lg:h-[333px] bg-[#d9d9d926] text-center pt-14">
-      <div class="max-w-[530px] ml-auto mr-auto">
+      <div class="max-w-[530px] ml-auto mr-auto text-bg-gray-cumtual">
         <h3 class="font-semibold">Agendar cita</h3>
         <p class="text-center font-normal mt-7">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero voluptatem dolores corrupti maxime, 
@@ -105,41 +70,20 @@ const pageTitle = title;
   </section>
 
   <section class="relative w-full overflow-hidden mt-[50px]">
-    <div class=" lg:h-[333px] bg-[#ffffff] text-center pt-14">
-      <div class="max-w-[530px] ml-auto mr-auto">
-  
+    <div class="lg:h-[500px] bg-[#ffffff] text-center pt-14">
+      <div id="slider" class="flex justify-center space-x-4 lg:h-[400px] overflow-hidden">      
+        <img class="w-[250px] h-full object-cover transition-all duration-300 hover:shadow-lg" src={`/ImagenesConvertidas/${img}`} alt="Imagen 1" />
+        <img class="w-[250px] h-full object-cover transition-all duration-300 hover:shadow-lg" src={`/ImagenesConvertidas/${img}`} alt="Imagen 2" />
+        <img class="w-[250px] h-full object-cover transition-all duration-300 hover:shadow-lg" src={`/ImagenesConvertidas/${img}`} alt="Imagen 3" />
+        <img class="w-[250px] h-full object-cover transition-all duration-300 hover:shadow-lg" src={`/ImagenesConvertidas/${img}`} alt="Imagen 4" />   
       </div>
-     
     </div>
   </section>
+ 
+  
 
-  <footer class=" rounded-lg shadow m-4">
-		<div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
-			<div class="sm:flex sm:items-center sm:justify-between">
-				<a href="https://cumtual.com/" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
-					<img src={logo.src} class="h-8" alt="Cumtual Logo" />
-					<span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Cumtual</span>
-				</a>
-				<ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
-					<li>
-						<a href="#" class="hover:underline me-4 md:me-6">Inicio</a>
-					</li>
-					<li>
-						<a href="#" class="hover:underline me-4 md:me-6">Proyectos</a>
-					</li>
-					<li>
-						<a href="#" class="hover:underline me-4 md:me-6">Sobre nosotros</a>
-					</li>
-					<li>
-						<a href="#" class="hover:underline">Contacto</a>
-					</li>
-				</ul>
-			</div>
-			<hr class="my-6 border-gray-200 sm:mx-auto justify-center dark:border-gray-700 lg:my-8" />
-			<span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a href="https://cumtual.com/" class="hover:underline">Cumtual</a>. Todos los derechos reservados.</span>
-		</div>
-	  </footer>
-	
+ 
+  
 </Layout>
 
 
