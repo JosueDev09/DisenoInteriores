@@ -3,6 +3,7 @@ const {pageTitle} = Astro.props;
 import { ClientRouter } from 'astro:transitions';
 import Header from "@components/Header.astro";
 import Footer from '@components/footer.astro';
+import "aos/dist/aos.css";
 const url = new URL(Astro.url); // Obtén la URL de la página actual
 const pathname = url.pathname;
 
@@ -21,6 +22,11 @@ const pathname = url.pathname;
 		<ClientRouter />
 	</head>
 	<body class="bg-transparent overflow-x-hidden">
+		<script>
+			import { myAosInit } from "@utils/aos";
+			myAosInit();
+			document.addEventListener("astro:after-swap", myAosInit);
+		  </script>
 		<Header />
 		<slot/>
 		{pathname !== '/' && <Footer />}

@@ -21,8 +21,14 @@ export const Slider = () => {
         onClick={(e) => e.stopPropagation()}
       >
         <a
-          href={"#"}
+          href={"/proyectos"}
           className="hover:text-green-cumtual transition-colors duration-200 delay-100 cursor-pointer ease-in-out"
+        >
+          Proyectos
+        </a>
+        <a
+          href={"#"}
+          className="hover:text-green-cumtual transition-colors duration-200 delay-100 cursor-pointer ease-in-out mt-4"
         >
           Nosotros
         </a>
@@ -30,20 +36,9 @@ export const Slider = () => {
           href={"#"}
           className="hover:text-green-cumtual transition-colors duration-200 delay-100 cursor-pointer ease-in-out mt-4"
         >
-          Anuncios
+          Contáctanos
         </a>
-        <a
-          href={"#"}
-          className="hover:text-green-cumtual transition-colors duration-200 delay-100 cursor-pointer ease-in-out mt-4"
-        >
-          Blog
-        </a>
-        <a
-          href={"#"}
-          className="hover:text-green-cumtual transition-colors duration-200 delay-100 cursor-pointer ease-in-out mt-4"
-        >
-          Contacto
-        </a>
+        
       </aside>
     </>
   );

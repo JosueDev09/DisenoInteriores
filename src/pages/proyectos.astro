@@ -15,9 +15,9 @@ const pageTitle ="Proyectos"
 
 
           <div class="relative mt-48  lg:text-center font-extrabold">
-            <h1 class="text-center font-serif">PROYECTOS</h1>
+            <h1 class="text-center font-serif text-2xl lg:text-bg-gray-cumtual">PROYECTOS</h1>
             <div >
-              <div class="ml-[-85px] mt-[100px] md:ml-[110px] lg:ml-[190px] flex flex-wrap ">
+              <div class="ml-[-85px] mt-[100px] md:ml-[110px] lg:ml-[230px] flex flex-wrap ">
                   {proyectos.map(proyecto => {
                       const { data } = proyecto;
                       const { title, company, img, description, slug } = data;
@@ -28,17 +28,17 @@ const pageTitle ="Proyectos"
                                   <img class="w-full  lg:w-full h-full object-cover transition-all duration-300"  loading="lazy"  src={`/ImagenesConvertidas/${img}`} alt={title} />
                               </a>
           
-                              <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
+                              <div class="absolute inset-0 lg:bg-bg-gray-cumtual/0 lg:group-hover:bg-bg-gray-cumtual/80 transition-opacity duration-300"></div>
           
-                              <div class="absolute top-[250px] left-[30px] justify-center right-0 w-[400px] h-[1px] bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform -translate-y-1/2"></div>
+                              <div class="absolute top-[265px] left-[30px] justify-center right-0 w-[400px] h-[.5px] sm:bg-green-cumtual  lg:bg-green-cumtual opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform -translate-y-1/2"></div>
           
-                              <span class="absolute bottom-20 right-[310px] mb-2 mr-2 text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 cursor-pointer">
+                              <span class="absolute bottom-10 right-[310px] mb-2 mr-2 text-white text-xl font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 cursor-pointer">
                                   {title}
                               </span>
           
                               <a href={`/proyecto/${slug}`}>
-                                  <span class="absolute bottom-20 right-5 mb-2 mr-2 text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 cursor-pointer">
-                                      Ver más
+                                  <span class="absolute bottom-10 right-5 mb-2 mr-2 text-white text-xl font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 cursor-pointer">
+                                      Ver más 
                                   </span>
                               </a>
                           </div>
@@ -48,6 +48,24 @@ const pageTitle ="Proyectos"
           </div>        
           </div>               
 
+    </section>
+
+    <section class="relative w-full overflow-hidden mt-[50px]">
+      <div class=" lg:h-[333px] bg-[#d9d9d926] text-center pt-14">
+        <div class="max-w-[530px] ml-auto mr-auto text-bg-gray-cumtual">
+          <h3 class="font-semibold">Agendar cita</h3>
+          <p class="text-center font-normal mt-7">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero voluptatem dolores corrupti maxime, 
+            pariatur, hic officia ipsam obcaecati sequi debitis, eveniet error eos? Sed dicta distinctio voluptas aperiam tempora nulla!
+          </p>
+          <div class="flex flex-col sm:flex-row sm:space-x-6 sm:space-y-0 justify-center mt-8 ">
+            <a class="px-6 py-3 text-black border-2 border-black hover:bg-gray-200 transition duration-300 cursor-pointer ">
+              CONTACTANOS
+            </a>
+            </div>
+        </div>
+       
+      </div>
     </section>
 
 

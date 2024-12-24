@@ -4,9 +4,9 @@ import { Slider } from "./Slider";
 import CumtualSVG from "./CumtualSVG.astro";
 ---
 
-<div class=" p-[30px] bg-transparent fixed top-0 left-0 w-full text-black z-50 transition-all duration-100 cursor-pointer" id="navbar">
-    <div class="max-w-7xl mx-auto px-4 py-3 border-b border-gray-400">
-    <div class="flex justify-between items-center lg:text-bg-gray-cumtual text-xl" id="menu">
+<div class=" p-[30px]  lg:bg-transparent fixed top-0 left-0 w-full text-black z-50 transition-all duration-100 cursor-pointer " id="navbar">
+    <div class="max-w-7xl mx-auto px-4 py-3 border-b xl:border-bg-gray-cumtual" id="lineaMenu">
+    <div class="flex justify-between items-center l lg:text-bg-gray-cumtual text-xl" id="menu">
         <a href="/">
           <div class="flex items-center">
             <CumtualSVG />
@@ -34,17 +34,28 @@ import CumtualSVG from "./CumtualSVG.astro";
     const navbar = document.getElementById("navbar");
     const menu = document.getElementById("menu");
     const mobile = document.getElementById("mobile");
+    const lineaMenu = document.getElementById("lineaMenu");
+
     if (window.scrollY > 0) {
           // Cuando hace scroll, cambia el fondo a negro
-          navbar?.classList.remove('bg-transparent');
-          navbar?.classList.add('lg:bg-[#191A1E]');
+          navbar?.classList.remove('lg:bg-transparent');
+          navbar?.classList.add('lg:bg-[#191A1E]/95');
+          navbar?.classList.add('sm:bg-[#191A1E]/95');
           menu?.classList.add('lg:text-[#FFFF]');
+          menu?.classList.add('xl:text-[#FFFF]');
+          lineaMenu?.classList.add('xl:border-green-cumtual');
+          // lineaMenu?.classList.add('xl:border-green-cumtual');
           mobile?.classList.add('text-bg-gray-cumtual');
+          
             
         } else {
           // Si no hace scroll (está en la parte superior), el fondo es transparente
-          navbar?.classList.remove('lg:bg-[#191A1E]');  
+          navbar?.classList.remove('lg:bg-[#191A1E]/95');  
+          navbar?.classList.remove('sm:bg-[#191A1E]/95');
           menu?.classList.remove('lg:text-[#FFFF]');
+          menu?.classList.remove('xl:text-[#FFFF]');
+          lineaMenu?.classList.remove('xl:border-green-cumtual');
+          lineaMenu?.classList.add('xl:border-bg-gray-cumtual');
           navbar?.classList.add('lg:bg-transparent');
           menu?.classList.add('lg:text-bg-gray-cumtual');
           
